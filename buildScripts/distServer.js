@@ -4,10 +4,11 @@ import open from 'open';
 import compression from 'compression';
 
 /* eslint-disable no-console */
-const port = 3100;
-
+const port = 3000;
 const app = express();
-app.compression();
+
+app.use(compression());
+app.use(express.static('dist'));
 
 
 app.get('/', function(req, res){
